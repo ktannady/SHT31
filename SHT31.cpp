@@ -52,7 +52,7 @@ bool SHT31::begin(const uint8_t address, const uint8_t dataPin, const uint8_t cl
   _wire = &Wire;
   if ((dataPin < 255) && (clockPin < 255))
   {
-    _wire->begin(dataPin, clockPin);
+    _wire->begin((int)dataPin, clockPin);
   } else {
     _wire->begin();
   }
